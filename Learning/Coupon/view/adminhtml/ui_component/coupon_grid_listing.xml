@@ -1,0 +1,122 @@
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">coupon_grid_listing.coupon_grid_listing_data_source</item>
+            <item name="deps" xsi:type="string">coupon_grid_listing.coupon_grid_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">learning_coupon_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add New Post</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/new</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="coupon_grid_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">coupon_grid_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">entity_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <columns name="learning_coupon_columns">
+            <selectionsColumn name="ids">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="indexField" xsi:type="string">entity_id</item>
+                        <item name="sortOrder" xsi:type="number">0</item>
+                    </item>
+                </argument>
+            </selectionsColumn>
+            <column name="entity_id">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="filter" xsi:type="string">text</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="label" xsi:type="string" translate="true">entity_id</item>
+                        <item name="sortOrder" xsi:type="number">8</item>
+                    </item>
+                </argument>
+            </column>
+            <column name="name">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="filter" xsi:type="string">text</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="label" xsi:type="string" translate="true">name</item>
+                        <item name="sortOrder" xsi:type="number">7</item>
+                    </item>
+                </argument>
+            </column>
+            <column name="lifetime">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="filter" xsi:type="string">text</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="label" xsi:type="string" translate="true">lifetime</item>
+                        <item name="sortOrder" xsi:type="number">10</item>
+                    </item>
+                </argument>
+            </column>
+            <column name="coupon_code">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="filter" xsi:type="string">text</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="label" xsi:type="string" translate="true">coupon_code</item>
+                        <item name="sortOrder" xsi:type="number">10</item>
+                    </item>
+                </argument>
+            </column>
+            <column name="status">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="filter" xsi:type="string">text</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="label" xsi:type="string" translate="true">status</item>
+                        <item name="sortOrder" xsi:type="number">10</item>
+                    </item>
+                </argument>
+            </column>
+        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Created At</item>
+                    <item name="dateFormat" xsi:type="string">Y-MM-dd HH:mm:ss</item>
+                </item>
+            </argument>
+        </column>
+        <column name="updated_at" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Update At</item>
+                    <item name="dateFormat" xsi:type="string">Y-MM-dd HH:mm:ss</item>
+                </item>
+            </argument>
+        </column>
+
+    </columns>
+</listing>

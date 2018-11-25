@@ -1,0 +1,39 @@
+<?php declare(strict_types=1);
+
+/** @var \Learning\Coupon\ViewModel\Modal $viewModel */
+//$viewModel = $block->getData('ViewModel');
+/** @var \Learning\Coupon\Block\Modal $product */
+/** @var \Learning\Coupon\Block\Modal $block */
+?>
+
+<?php if (!$block->getStatus() && $block->isLoggedIn()): ?>
+    <div style="color: #0fa7ff; display: none;" id="shipNowContent"><?= $block->getCoupon();?></div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            console.log('modal window');
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                title: 'popup modal title',
+                buttons: [{
+                    text: $.mage.__('Continue'),
+                    class: '',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+                $("#shipNowContent").modal(options).modal('openModal');
+        }
+    );
+</script>
+<?php endif; ?>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Learning_Coupon::coupon" title="Coupon" module="Learning_Coupon" sortOrder="51" resource="Learning_Coupon::coupon"/>
+        <add id="Learning_Coupon::grid" title="Manage Coupons" module="Learning_Coupon" sortOrder="10" action="coupon/grid/index" resource="Learning_Coupon::coupon" parent="Learning_Coupon::coupon"/>
+        <add id="Learning_Coupon::coupon_configuration" title="Configuration" module="Learning_Coupon" sortOrder="99" parent="Learning_Coupon::coupon" action="adminhtml/system_config/edit/section/coupon" resource="Learning_Coupon::coupon_configuration"/>
+    </menu>
+</config>
